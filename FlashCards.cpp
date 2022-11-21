@@ -1,6 +1,21 @@
 #include "FlashCards.h"
 
-int main(){
-    cout << "Just testing the files!";
-    cout << "Testing if commiting works";
+FlashCards::~FlashCards(){
+
+}
+
+void FlashCards::printOutCards(){
+
+}
+
+void FlashCards::insertCards(){
+
+}
+
+void FlashCards::removeCard(){
+
+}
+
+void FlashCards::removeCard(){
+    
 }
