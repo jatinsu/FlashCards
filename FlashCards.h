@@ -20,6 +20,7 @@ class FlashCards{
         // remove the card
         void removeCard();
         // member variables
+        int numCards;
         Node *m_head;
         Node *m_tail;
 };
