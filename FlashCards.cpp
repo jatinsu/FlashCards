@@ -14,17 +14,36 @@ FlashCards::~FlashCards(){
 }
 
 void FlashCards::printOutCards(){
-
+    Node* temp = m_head;
+    while(temp != nullptr){
+        cout << temp->m_data;
+    }
 }
 
-void FlashCards::insertCards(){
-
+void FlashCards::insertCards(string data){
+    Node* newData = new Node();
+    Node* temp = m_head;
+    newData->m_data = data;
+    // Set the next pointer of newData to nullptr since it's the last node in the data set
+    newData->m_next = nullptr;
+    // check if the linked list is empty, if it is then set the m_previous to null and make the head the new data set
+    if(m_head == nullptr){
+        newData->m_previous = nullptr;
+        m_head = newData;
+        return;
+    }
+    while(temp->m_next != nullptr){
+        temp = temp->m_next;
+    }
+    temp->m_next = newData;
+    newData->m_previous = temp;
 }
 
+// since it's going to always add it to the end, we won't have to worry about searching and inserting it randomly throughout, thus having O(n) complexity
 void FlashCards::removeCard(){
 
 }
 
 int main(){
-
+    
 }
