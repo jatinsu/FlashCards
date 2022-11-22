@@ -13,6 +13,7 @@ class Node{
 class FlashCards{
     friend class Node;
     public:
+        FlashCards();
         // destructor
         ~FlashCards();
         //prints out the cards

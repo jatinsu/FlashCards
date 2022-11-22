@@ -1,5 +1,7 @@
 CXX = g++
 CXXFLAGS = -Wall -g
 
-FlashCards: FlashCards.cpp
-	$(CXX) $(CXXFLAGS) FlashCards.cpp -o FlashCards
+program: FlashCards.o program.cpp
+	$(CXX) $(CXXFLAGS) FlashCards.o program.cpp -o program
+FlashCards.o: FlashCards.cpp
+	$(CXX) $(CXXFLAGS) -c FlashCards.cpp

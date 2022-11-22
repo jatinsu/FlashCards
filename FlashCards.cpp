@@ -1,16 +1,24 @@
 #include "FlashCards.h"
 
+FlashCards::FlashCards(){
+    numCards = 0;
+    m_head = nullptr;
+    m_tail = nullptr;
+}
+
 // the destructor
 FlashCards::~FlashCards(){
-    Node* temp = nullptr;
-    while(m_head != nullptr){
-        temp = m_head;
-        m_head = m_head->m_next;
-        delete temp;
+    if(m_head != nullptr){
+        Node* temp = nullptr;
+        while(m_head != nullptr){
+            temp = m_head;
+            m_head = m_head->m_next;
+            delete temp;
+        }
+        m_head = nullptr;
+        m_head = nullptr;
+        numCards = 0;
     }
-    m_head = nullptr;
-    m_head = nullptr;
-    numCards = 0;
 }
 
 void FlashCards::printOutCards(){
@@ -20,6 +28,7 @@ void FlashCards::printOutCards(){
     }
 }
 
+// since it's going to always add it to the end, we won't have to worry about searching and inserting it randomly throughout, thus having O(n) complexity
 void FlashCards::insertCards(string data){
     Node* newData = new Node();
     Node* temp = m_head;
@@ -39,11 +48,7 @@ void FlashCards::insertCards(string data){
     newData->m_previous = temp;
 }
 
-// since it's going to always add it to the end, we won't have to worry about searching and inserting it randomly throughout, thus having O(n) complexity
+
 void FlashCards::removeCard(){
 
-}
-
-int main(){
-    
 }
