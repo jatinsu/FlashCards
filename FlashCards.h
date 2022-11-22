@@ -21,7 +21,7 @@ class FlashCards{
         // insert the cards
         void insertCards(string data);
         // remove the card
-        void removeCard();
+        void removeCard(int index);
         // member variables
         int numCards;
         Node *m_head;

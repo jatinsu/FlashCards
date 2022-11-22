@@ -53,6 +53,27 @@ void FlashCards::insertCards(string data){
 }
 
 
-void FlashCards::removeCard(){
+void FlashCards::removeCard(int index){
+    Node *temp = m_head;
+    // check to see if the list is empty
+    if(m_head == nullptr){
+        return;
+    }
+    //check if the index is the first node, so it'll only remove the head
+    if(index == 0){
+        Node *temp = m_head;
+        m_head = m_head->m_next;
+        delete temp;
+        numCards--;
+        return;
+    }
+    // check if the index is the last node, so it'll only remove the tail
+    if(index == numCards){
+        
+    }
 
+    for(int i = 0; i < index; i++){
+
+    }
+    delete temp;
 }
