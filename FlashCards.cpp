@@ -41,6 +41,7 @@ void FlashCards::insertCards(string data){
         newData->m_previous = nullptr;
         m_head = newData;
         m_head->m_next = nullptr;
+        numCards++;
         return;
     }
     while(temp->m_next != nullptr){
@@ -48,9 +49,10 @@ void FlashCards::insertCards(string data){
     }
     temp->m_next = newData;
     newData->m_previous = temp;
+    numCards++;
 }
 
 
 void FlashCards::removeCard(){
-    
+
 }
