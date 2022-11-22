@@ -25,6 +25,7 @@ void FlashCards::printOutCards(){
     Node* temp = m_head;
     while(temp != nullptr){
         cout << temp->m_data;
+        temp = temp->m_next;
     }
 }
 
@@ -39,6 +40,7 @@ void FlashCards::insertCards(string data){
     if(m_head == nullptr){
         newData->m_previous = nullptr;
         m_head = newData;
+        m_head->m_next = nullptr;
         return;
     }
     while(temp->m_next != nullptr){
