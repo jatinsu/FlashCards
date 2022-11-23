@@ -56,8 +56,6 @@ void FlashCards::insertCards(string data){
 
 
 void FlashCards::removeCard(int index){
-    Node *temp = m_head;
-    Node *current = returnNode(index);
     // check to see if the list is empty
     if(m_head == nullptr){
         return;
@@ -79,15 +77,15 @@ void FlashCards::removeCard(int index){
         numCards--;
         return;
     }else{
-        // // if it's somewhere in the middle, then set the previous->next to next and vice versa
-        // current->m_previous->m_next = current->m_next;
-        // if(current->m_next != nullptr){
-        //     current->m_next->m_previous = current->m_previous;
-        // }
-        // current = nullptr;
-        // delete current;
+        Node *current = returnNode(index);
+        // if it's somewhere in the middle, then set the previous->next to next and vice versa
+        current->m_previous->m_next = current->m_next;
+        if(current->m_next != nullptr){
+            current->m_next->m_previous = current->m_previous;
+        }
+        current = nullptr;
+        delete current;
     }
-    //delete temp;
 }
 
 // Really only used for removeCard, but lets you return a node based on the index
