@@ -23,8 +23,10 @@ FlashCards::~FlashCards(){
 
 void FlashCards::printOutCards(){
     Node* temp = m_head;
+    int counter = 1;
     while(temp != nullptr){
-        cout << temp->m_data << endl;
+        cout << counter << ". " << temp->m_data << endl;
+        counter++;
         temp = temp->m_next;
     }
 }
@@ -72,8 +74,17 @@ void FlashCards::removeCard(int index){
         
     }
 
-    for(int i = 0; i < index; i++){
-
-    }
     delete temp;
+}
+
+Node* FlashCards::returnNode(int index){
+    if(m_head == nullptr){
+        return nullptr;
+    }
+    Node* nodeToReturn = m_head;
+    for(int i = 0; i < index; i++){
+        nodeToReturn = nodeToReturn->m_next;
+    }
+    cout << nodeToReturn->m_data;
+    return nodeToReturn;
 }
