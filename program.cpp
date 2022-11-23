@@ -5,7 +5,7 @@ int main(){
     flashcard.insertCards("This is the content");
     flashcard.insertCards("so like I was thinking");
     flashcard.insertCards("pslkf;askldf");
+    cout << "Before removal: " << endl;
     flashcard.printOutCards();
-    //flashcard.removeCard(0);
-    flashcard.returnNode(2);
+    flashcard.removeCard(2);
 }
