@@ -2,12 +2,15 @@
 
 int main(){
     FlashCards flashcard;
-    flashcard.insertCards("This is the content");
-    flashcard.insertCards("so like I was thinking");
-    flashcard.insertCards("pslkf;askldf");
-    cout << "Before removal: " << endl;
-    flashcard.printOutCards();
-    flashcard.removeCard(1);
-    cout << "After removal: " << endl;
+    int numberOfCards;
+    string card;
+    cout << "Welcome to FlashCards!\n";
+    cout << "How many flash cards are you going to make? ";
+    cin >> numberOfCards;
+    for(int i = 0;i < numberOfCards; i++){
+        cout << "Enter the card you want to insert: ";
+        cin >> card;
+        flashcard.insertCards(card);
+    }
     flashcard.printOutCards();
 }
