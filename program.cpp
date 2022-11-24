@@ -10,11 +10,13 @@ int main(){
     while(input != 4){
         cout << "1. Create New flashcards\n2. Display all flashcards\n3. Go through flashcards 1 by 1\n4. Exit\n";
         cin >> input;
+        cin.ignore();
         switch(input){
         case 1:
             if(checkIfNew){
                 cout << "Are you sure you want to clear your current set of cards? (y/n)";
                 cin >> choice1;
+                cin.ignore();
                 if(choice1 == "n"){
                     break;
                 }
@@ -26,7 +28,12 @@ int main(){
             for(int i = 0;i < numberOfCards; i++){
                 cout << "Enter the card you want to insert: ";
                 getline(cin, choice);
-                flashcard.insertCards(choice);
+                if(choice.length() == 0){
+                    cout << "You have to enter information in the card!\n";
+                    i--;
+                }else{
+                    flashcard.insertCards(choice);
+                }
             }
             checkIfNew = true;
             break;
@@ -44,13 +51,12 @@ int main(){
             } 
             temp = flashcard.m_head;
             cout << "Entered printing one by one mode\n";
-            cin >> choice;
             while(choice != "q" || choice != "quit"){
                 if(choice == "q" || choice == "quit"){
                     break;
                 }
                 temp = flashcard.printOne(choice, temp);
-                cin >> choice;
+                getline(cin, choice);
             }
             break;
         case 4:

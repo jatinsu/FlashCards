@@ -38,7 +38,8 @@ void FlashCards::printOutCards(){
 }
 
 Node* FlashCards::printOne(string choice, Node* temp){
-    if(choice == "next" || choice == "n"){
+    cout << "The current card is: " << temp->m_data << endl;
+    if(choice.length() == 0){
         if(temp->m_next == nullptr){
             cout << "There is no next card!\n";
         }else{
@@ -53,9 +54,6 @@ Node* FlashCards::printOne(string choice, Node* temp){
             temp = temp->m_previous;
             cout << "The previous card is: " << temp->m_data << endl;
         }
-    }
-    if(choice == "c" || choice == "current"){
-        cout << "The current card is: " << temp->m_data << endl;
     }
     return temp;
 }
