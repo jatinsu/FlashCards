@@ -2,7 +2,8 @@
 
 int main(){
     FlashCards flashcard;
-    int numberOfCards = 0, input = 0, checkIfNew = 0;
+    int numberOfCards = 0, input = 0;
+    bool checkIfNew = false;
     string choice = "", choice1;
     Node*temp;
     cout << "Welcome to FlashCards!\n";
@@ -11,7 +12,7 @@ int main(){
     cin >> input;
     switch(input){
       case 1:
-        if(checkIfNew == 1){
+        if(checkIfNew){
             cout << "Are you sure you want to clear your current set of cards? (y/n)";
             cin >> choice1;
             if(choice1 == "n"){
@@ -27,7 +28,7 @@ int main(){
             getline(cin, choice);
             flashcard.insertCards(choice);
         }
-        checkIfNew = 1;
+        checkIfNew = true;
         break;
       case 2:
         if(flashcard.m_head == nullptr) cout << "You forgot to insert cards!\n";
@@ -39,7 +40,6 @@ int main(){
             break;  
         } 
         temp = flashcard.m_head;
-        cout << "The head is " << flashcard.m_head->m_data;
         cout << "Entered printing one by one mode\n";
         cin >> choice;
         while(choice != "q" || choice != "quit"){

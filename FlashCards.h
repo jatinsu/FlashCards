@@ -25,7 +25,7 @@ class FlashCards{
         // returns the node based on the index given
         Node* returnNode(int index);
         Node* printOne(string choice, Node* temp);
-        //essentially the destructor;
+        //essentially the destructor
         void clear();
 
         // member variables
