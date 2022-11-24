@@ -31,6 +31,11 @@ void FlashCards::printOutCards(){
     }
 }
 
+void FlashCards::printOne(string choice){
+
+        
+}
+
 // since it's going to always add it to the end, we won't have to worry about searching and inserting it randomly throughout, thus having O(n) complexity
 void FlashCards::insertCards(string data){
     Node* newData = new Node();

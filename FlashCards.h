@@ -24,6 +24,8 @@ class FlashCards{
         void removeCard(int index);
         // returns the node based on the index given
         Node* returnNode(int index);
+        void printOne(string choice);
+
         // member variables
         int numCards;
         Node *m_head;
