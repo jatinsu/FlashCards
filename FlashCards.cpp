@@ -8,53 +8,56 @@ FlashCards::FlashCards(){
 
 // the destructor
 FlashCards::~FlashCards(){
+    clear();
+}
+
+void FlashCards::clear(){
     if(m_head != nullptr){
-        Node* temp = nullptr;
-        while(m_head != nullptr){
-            temp = m_head;
-            m_head = m_head->m_next;
-            delete temp;
-        }
-        m_head = nullptr;
-        m_head = nullptr;
-        numCards = 0;
+    Node* temp = nullptr;
+    while(m_head != nullptr){
+        temp = m_head;
+        m_head = m_head->m_next;
+        delete temp;
+    }
+    m_head = nullptr;
+    m_head = nullptr;
+    numCards = 0;
     }
 }
 
 void FlashCards::printOutCards(){
     Node* temp = m_head;
     int counter = 1;
+    cout << endl;
     while(temp != nullptr){
-        cout << counter << ". " << temp->m_data << endl;
+        cout << "Card " << counter << ": " << temp->m_data << endl;
         counter++;
         temp = temp->m_next;
     }
+    cout << endl;
 }
 
 Node* FlashCards::printOne(string choice, Node* temp){
-        if(choice == "q" || choice == "quit"){
-            return nullptr;
+    if(choice == "next" || choice == "n"){
+        if(temp->m_next == nullptr){
+            cout << "There is no next card!\n";
+        }else{
+            temp = temp->m_next;
+            cout << "The next card is: " <<temp->m_data << endl;
         }
-        if(choice == "next" || choice == "n"){
-            if(temp->m_next == nullptr){
-                cout << "There is no next card!\n";
-            }else{
-                temp = temp->m_next;
-                cout << "The next card is: " <<temp->m_data << endl;
-            }
+    }
+    if(choice == "p" || choice == "previous"){
+        if(temp->m_previous == nullptr){
+            cout << "There is no previous card!\n";
+        }else{
+            temp = temp->m_previous;
+            cout << "The previous card is: " << temp->m_data << endl;
         }
-        if(choice == "p" || choice == "previous"){
-            if(temp->m_previous == nullptr){
-                cout << "There is no previous card!\n";
-            }else{
-                temp = temp->m_previous;
-                cout << "The previous card is: " << temp->m_data << endl;
-            }
-        }
-        if(choice == "c" || choice == "current"){
-            cout << "The current card is: " << temp->m_data << endl;
-        }
-        return temp;
+    }
+    if(choice == "c" || choice == "current"){
+        cout << "The current card is: " << temp->m_data << endl;
+    }
+    return temp;
 }
 
 // since it's going to always add it to the end, we won't have to worry about searching and inserting it randomly throughout, thus having O(n) complexity
