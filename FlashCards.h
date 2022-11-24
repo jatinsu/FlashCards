@@ -21,7 +21,7 @@ class FlashCards{
         //prints out the cards
         void printOutCards();
         // insert the cards
-        void insertCards(string data);
+        void insertCards(string data, string reveal);
         // remove the card
         void removeCard(int index);
         // returns the node based on the index given
