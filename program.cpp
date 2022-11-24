@@ -2,13 +2,14 @@
 
 int main(){
     FlashCards flashcard;
-    int numberOfCards = 0, input = 0;
+    int numberOfCards = 0, input = 0, cardToRemove;
     bool checkIfNew = false;
     string choice = "", choice1;
     Node*temp;
     cout << "Welcome to FlashCards!\n";
-    while(input != 4){
-        cout << "1. Create New flashcards\n2. Display all flashcards\n3. Go through flashcards 1 by 1\n4. Exit\n";
+    while(input != 5){
+        cout << "\nFlashCard Menu:\n";
+        cout << "1. Create New flashcards\n2. Display all flashcards\n3. Go through flashcards 1 by 1\n4. Delete a FlashCard\n5. Exit\n";
         cin >> input;
         cin.ignore();
         switch(input){
@@ -60,6 +61,17 @@ int main(){
             }
             break;
         case 4:
+            if(flashcard.m_head == nullptr){
+                cout << "You forgot to insert cards!\n";
+                break;  
+            } 
+            flashcard.printOutCards();
+            cout << "Which FlashCard would you like to remove? ";
+            cin >> cardToRemove;
+            cin.ignore();
+            flashcard.removeCard(cardToRemove);
+            break;
+        case 5:
             cout << "Thank you for playing!\n";
             return 0;
         default:
