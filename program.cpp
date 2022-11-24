@@ -72,7 +72,7 @@ int main(){
             flashcard.removeCard(cardToRemove);
             break;
         case 5:
-            cout << "Thank you for playing!\n";
+            cout << "Thank you for using FlashCards!!\n";
             return 0;
         default:
             cout << "Please enter a number 1-5!\n";
