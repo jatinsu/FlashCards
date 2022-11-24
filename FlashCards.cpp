@@ -31,9 +31,30 @@ void FlashCards::printOutCards(){
     }
 }
 
-void FlashCards::printOne(string choice){
-
-        
+Node* FlashCards::printOne(string choice, Node* temp){
+        if(choice == "q" || choice == "quit"){
+            return nullptr;
+        }
+        if(choice == "next" || choice == "n"){
+            if(temp->m_next == nullptr){
+                cout << "There is no next card!\n";
+            }else{
+                temp = temp->m_next;
+                cout << "The next card is: " <<temp->m_data << endl;
+            }
+        }
+        if(choice == "p" || choice == "previous"){
+            if(temp->m_previous == nullptr){
+                cout << "There is no previous card!\n";
+            }else{
+                temp = temp->m_previous;
+                cout << "The previous card is: " << temp->m_data << endl;
+            }
+        }
+        if(choice == "c" || choice == "current"){
+            cout << "The current card is: " << temp->m_data << endl;
+        }
+        return temp;
 }
 
 // since it's going to always add it to the end, we won't have to worry about searching and inserting it randomly throughout, thus having O(n) complexity

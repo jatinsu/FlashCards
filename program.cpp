@@ -13,28 +13,16 @@ int main(){
         cin >> card;
         flashcard.insertCards(card);
     }
+    
     cout << "Entered printing one by one mode\n";
+    Node* temp = flashcard.m_head;
     cin >> choice;
     while(choice != "q" || choice != "quit"){
+        if(choice == "q" || choice == "quit"){
+            break;
+        }
+        temp = flashcard.printOne(choice, temp);
         cin >> choice;
-        Node* temp = flashcard.m_head;
-        cout << temp->m_data << endl;
-        if(choice == "next" || choice == "n"){
-            if(temp->m_next == nullptr){
-                cout << "There is no next card!\n";
-            }else{
-                temp = temp->m_next;
-                cout << "The next card is: " <<temp->m_data << endl;
-            }
-        }
-        if(choice == "p" || choice == "previous"){
-            if(temp->m_previous == nullptr){
-                cout << "There is no previous card!\n";
-            }else{
-                temp = temp->m_previous;
-                cout << "The previous card is: " << temp->m_data << endl;
-            }
-        }
     }
     flashcard.printOutCards();
 }
