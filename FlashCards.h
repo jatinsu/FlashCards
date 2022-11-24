@@ -5,6 +5,8 @@ class Node{
     public:
         // The data of the string
         string m_data;
+        // revealed data
+        string m_reveal;
         Node *m_next;
         // since it's a doubly linked list, you need a pointer for the previous data
         Node *m_previous;
