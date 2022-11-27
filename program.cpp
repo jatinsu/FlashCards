@@ -69,7 +69,7 @@ int main(){
             cout << "Which FlashCard would you like to remove? ";
             cin >> cardToRemove;
             cin.ignore();
-            flashcard.removeCard(cardToRemove);
+            flashcard.removeCard(cardToRemove-1);
             break;
         case 5:
             cout << "Thank you for using FlashCards!!\n";
