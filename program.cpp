@@ -23,11 +23,11 @@ int main(){
                 }
             }
             flashcard.clear();
-            cout << "How many flash cards are you going to make(Enter a number)? ";
+            cout << "How many flash cards are you going to make (Enter a number)? ";
             cin >> numberOfCards;
             cin.ignore();
             for(int i = 0;i < numberOfCards; i++){
-                cout << "Enter the card you want to insert(enter a string): ";
+                cout << "Enter the card you want to insert (Enter a string): ";
                 getline(cin, choice);
                 if(choice.length() == 0){
                     cout << "You have to enter information in the card!\n";
