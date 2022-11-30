@@ -2,7 +2,7 @@
 A C++ program that lets you create, view, and delete flashcards using doubly linked lists
 
 ## Compile and Install ##
-On UNIX based systems: run `make execute` and it should compile and run
+On UNIX based systems: run `make execute` and it should compile and run!
 ## Commands ##
 1: Create new FlashCards
 
