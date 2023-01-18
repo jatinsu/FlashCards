@@ -78,4 +78,5 @@ int main(){
             cout << "Please enter a number 1-5!\n";
         }
     }
+    return 0;
 }
